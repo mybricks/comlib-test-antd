@@ -5,22 +5,26 @@ antd v4升级到v5版本
 
 1. 升级依赖
 2. 兼容4和5同时使用
-  必需：
+
+必需：
   - 使用`ConfigProvider`增加`prefixCls`前缀隔离
   - 编辑、调试样式插入点配置 使用`StyleProvider`并获取`shadowRoot`
 ```typescript
 let shadowRoot: ShadowRoot | undefined = void 0;
-  if (env?.runtime?.debug || !env?.runtime) {
-    // 编辑、调试在ShadowRoot上获取样式
-    const geoWebview = document.querySelector("#_mybricks-geo-webview_");
-    shadowRoot = geoWebview?.shadowRoot || void 0;
-  }
+if (env?.runtime?.debug || !env?.runtime) {
+  // 编辑、调试在ShadowRoot上获取样式
+  const geoWebview = document.querySelector("#_mybricks-geo-webview_");
+  shadowRoot = geoWebview?.shadowRoot || void 0;
+}
 
-  <StyleProvider container={shadowRoot}>
-    <MyApp>
-  </StyleProvider>
+<StyleProvider container={shadowRoot}>
+  <MyApp>
+</StyleProvider>
 ```
+  - 弹出层配置挂载点，如日历`getPopupContainer`等，`() => env?.canvasElement || document.body`
+  - 打包不external掉antd
 
+非必需：
   - 样式对齐，安装`@ant-design/compatible`，使用v4的主题包`ConfigProvider`中`theme`
   - 组件多语言 使用`ConfigProvider的locale`，如果需要继续使用moment还需要在打包配置中增加@ant-design/moment-webpack-plugin插件
 ```typescript
@@ -36,7 +40,7 @@ moment.locale("zh-cn");
   </StyleProvider>
 </ConfigProvider>
 ````
-  - 弹出层配置挂载点，如日历`getPopupContainer`等，`() => env?.canvasElement || document.body`
+  
   
 3. 完整配置例子
 ```typescript
