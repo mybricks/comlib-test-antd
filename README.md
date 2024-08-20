@@ -1,7 +1,7 @@
 # v4 => v5
 
 antd v4升级到v5版本
-参考资料：https://ant.design/docs/react/migration-v4-v5-cn
+参考资料：https://ant.design/docs/react/migration-v5-cn
 
 1. 升级依赖
 2. 兼容4和5同时使用
@@ -12,7 +12,6 @@ antd v4升级到v5版本
 ```typescript
 let shadowRoot: ShadowRoot | undefined = void 0;
 if (env?.runtime?.debug || !env?.runtime) {
-  // 编辑、调试在ShadowRoot上获取样式
   const geoWebview = document.querySelector("#_mybricks-geo-webview_");
   shadowRoot = geoWebview?.shadowRoot || void 0;
 }
@@ -25,10 +24,10 @@ if (env?.runtime?.debug || !env?.runtime) {
   - 打包不external掉antd
 
 非必需：
-  - 样式对齐，安装`@ant-design/compatible`，使用v4的主题包`ConfigProvider`中`theme`
-  - 组件多语言 使用`ConfigProvider的locale`，如果需要继续使用moment还需要在打包配置中增加@ant-design/moment-webpack-plugin插件
+  - 样式对齐，混合使用时需要对齐样式时使用，安装`@ant-design/compatible`，使用v4的主题包`ConfigProvider`中`theme`
+  - 组件多语言，部分组件多语言默认是英文， 使用`ConfigProvider的locale`，如果需要继续使用moment还需要在打包配置中增加@ant-design/moment-webpack-plugin插件
 ```typescript
-// dayjs同样
+// dayjs类似写法
 import locale from "antd/locale/zh_CN";
 import "moment/locale/zh-cn";
 moment.locale("zh-cn");
