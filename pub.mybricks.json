@@ -1,0 +1,12 @@
+{
+  "namespace": "mybricks/comlib-test-antd",
+  "domain": "https//my.mybricks.world",
+  "content": "",
+  "commitInfo": "init",
+  "comAry": [
+    "./src/datePicker/com.json"
+  ],
+  "externals": [],
+  "componentType": "PC",
+  "tags": "react"
+}

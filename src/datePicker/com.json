@@ -1,0 +1,36 @@
+{
+  "title": "日期选择框",
+  "namespace": "mybricks.comlib-test-antd.date-picker",
+  "version": "1.0.6",
+  "description": "输入或选择日期的控件。",
+  "author": "MyBricks",
+  "author_name": "MyBricks",
+  "icon": "./icon.svg",
+  "data": "./data.json",
+  "runtime": "./runtime.tsx",
+  "editors": "./editors.tsx",
+  "inputs": [
+    {
+      "id": "defaultValue",
+      "title": "初始值",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "id": "onChange",
+      "title": "值更新",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

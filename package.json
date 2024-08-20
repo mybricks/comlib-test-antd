@@ -1,0 +1,24 @@
+{
+  "name": "@mybricks/comlib-test-antd",
+  "version": "1.0.7",
+  "description": "测试andV5组件库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ant-design/compatible": "^5.1.3",
+    "antd": "^5.20.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@ant-design/moment-webpack-plugin": "^1.0.0",
+    "@types/node": "^18.0.6",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
+  }
+}
